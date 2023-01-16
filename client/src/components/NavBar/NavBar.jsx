@@ -1,6 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import logo2 from '../NavBar/logo2.png'
+import './NavBar.css';
+
 
 export default function NavBar(){
     const dispatch = useDispatch();
@@ -13,6 +16,9 @@ export default function NavBar(){
 
     return(
         <nav>
+            <div className="logo">
+                <img src={logo2} alt="logo img" />
+            </div>
             {/* SEARCH */}
             <div>
                 <input
@@ -22,6 +28,10 @@ export default function NavBar(){
                 />
             </div>
             {/* SEARCH */}
+
+            <div>
+                <button>New Recipe</button>
+            </div>
         </nav>
     )
 }

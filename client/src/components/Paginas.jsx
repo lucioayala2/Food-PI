@@ -1,5 +1,5 @@
 import React from 'react';
-import { PAGINAS as paginas } from '../reducer/actions';
+import { PAGINAS as paginas } from '../reducer/actions/actions';
 import { useDispatch } from 'react-redux';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
 

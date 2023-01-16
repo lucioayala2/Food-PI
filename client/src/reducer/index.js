@@ -1,19 +1,25 @@
 import {
-    PAGINAS
+    GET_ALL_RECIPE
 }
-from './actions';
+from './actions/actions';
 
 const initialState ={
+  recipes: [],
 
 }
-export function paginado(numero) {
-    return (dispatch) => {
-      dispatch({ type: PAGINAS, payload: numero });
-    };
+const Reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case GET_ALL_RECIPE: {
+      return {
+        ...state,
+        recipes: action.payload,
+        allrecipes: action.payload,
+        page: state.page < action.payload.length ? state.page : 1,
+        error: undefined,
+      };
+    }
+    default: return state;
   }
+}
 
-
-
- export default function rootReducer(state= initialState, action){
-    
- }
+export default Reducer;
